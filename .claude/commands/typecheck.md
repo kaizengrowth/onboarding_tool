@@ -1,0 +1,1 @@
+Run `npm run type-check` and fix every TypeScript error before reporting done. Do not use `any` as a fix — resolve the actual type. If a Supabase query returns `unknown`, narrow it with a cast to the matching type from `src/types/index.ts`.

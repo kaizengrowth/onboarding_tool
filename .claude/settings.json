@@ -1,0 +1,26 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm run dev)",
+      "Bash(npm run build)",
+      "Bash(npm run lint)",
+      "Bash(npm run type-check)",
+      "Bash(npm install*)",
+      "Bash(supabase start)",
+      "Bash(supabase stop)",
+      "Bash(supabase db push)",
+      "Bash(supabase db reset)",
+      "Bash(supabase gen types typescript*)",
+      "Bash(supabase status)",
+      "Bash(find . *)",
+      "Bash(grep *)",
+      "Bash(git status)",
+      "Bash(git diff*)",
+      "Bash(git log*)"
+    ],
+    "deny": [
+      "Bash(curl * supabase.co*)",
+      "Bash(rm -rf *)"
+    ]
+  }
+}
