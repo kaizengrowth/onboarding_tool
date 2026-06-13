@@ -1,5 +1,25 @@
 # CLAUDE.md
 
+This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
+
+> **Context pressure:** When context nears its limit, drop this file and load `src/CLAUDE.md`. From there, follow the routing table in that file to the specific subdirectory CLAUDE.md. If still constrained, drop `src/CLAUDE.md` and load only the leaf-level CLAUDE.md for your task domain.
+
+## Query Routing (Multi-Agent)
+
+Load the primary CLAUDE.md for the task domain. Load secondary only if the task spans both. Each listed file routes further to its own children.
+
+| Task domain | Primary CLAUDE.md | Secondary |
+|---|---|---|
+| Intake conversation, crisis detection, 5-question flow | `src/app/api/CLAUDE.md` | `src/lib/llm/CLAUDE.md` |
+| Pod matching, cohort grouping, pgvector similarity | `src/lib/matching/CLAUDE.md` | `src/app/api/CLAUDE.md` |
+| Pod instantiation, channel creation, welcome DM | `src/app/api/CLAUDE.md` | `src/lib/mattermost/CLAUDE.md` |
+| LLM abstraction, prompt engineering, provider swap | `src/lib/llm/CLAUDE.md` | — |
+| Database schema, migrations | `src/db/CLAUDE.md` | `src/lib/supabase/CLAUDE.md` |
+| Supabase clients, auth, RLS policies | `src/lib/supabase/CLAUDE.md` | `src/db/CLAUDE.md` |
+| Member ladder profile, rung transitions | `src/app/CLAUDE.md` | `src/lib/supabase/CLAUDE.md` |
+| Organizer dashboard, absorption view | `src/app/CLAUDE.md` | — |
+| UI components | `src/components/CLAUDE.md` | — |
+
 ## Project
 
 **The Hall — What We Will Community Platform.** A worker-led platform that absorbs people in the aftermath of layoffs: engages their questions, builds peer community, supports exploration of next steps, generates hiring evidence through preparation, grounds vouching, and routes members into building next systems together.
